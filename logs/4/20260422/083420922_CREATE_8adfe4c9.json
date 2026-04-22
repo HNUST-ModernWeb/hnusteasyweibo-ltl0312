@@ -1,0 +1,17 @@
+{
+  "userId" : 4,
+  "username" : "ltl",
+  "operationType" : "CREATE",
+  "operationModule" : "LIKE",
+  "operationDesc" : "点赞成功，帖子ID: 29",
+  "requestMethod" : "POST",
+  "requestUrl" : "/api/v1/posts/29/like",
+  "requestParams" : "postId=29, userId=4",
+  "requestStatus" : "SUCCESS",
+  "responseStatus" : 200,
+  "executionTimeMs" : 0.0,
+  "methodName" : "",
+  "clientIp" : "",
+  "userAgent" : "",
+  "timestamp" : "2026-04-22T08:34:20.922"
+}

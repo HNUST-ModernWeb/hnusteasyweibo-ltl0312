@@ -1,0 +1,17 @@
+{
+  "userId" : 0,
+  "username" : "anonymous",
+  "operationType" : "DOWNLOAD",
+  "operationModule" : "FILE",
+  "operationDesc" : "下载文件成功：fbab80d6-4672-443a-841a-a740614d131d.jpg",
+  "requestMethod" : "GET",
+  "requestUrl" : "/api/v1/files/download/fbab80d6-4672-443a-841a-a740614d131d.jpg",
+  "requestParams" : "filename=fbab80d6-4672-443a-841a-a740614d131d.jpg",
+  "requestStatus" : "SUCCESS",
+  "responseStatus" : 200,
+  "executionTimeMs" : 0.0,
+  "methodName" : "",
+  "clientIp" : "113.245.73.152",
+  "userAgent" : "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36 EdgA/146.0.0.0",
+  "timestamp" : "2026-04-22T08:38:13.926"
+}

@@ -1,0 +1,17 @@
+{
+  "userId" : 1,
+  "username" : "admin123",
+  "operationType" : "POST_CREATE",
+  "operationModule" : "POST",
+  "operationDesc" : "发布帖子: 12345678901234567890",
+  "requestMethod" : "POST",
+  "requestUrl" : "/api/v1/posts",
+  "requestParams" : "CreatePostDTO(categoryId=1, content=12345678901234567890, image=/uploads/fc7d5180-ce9e-4dca-9732-292fb62e8edb.jpg)",
+  "requestStatus" : "SUCCESS",
+  "responseStatus" : 200,
+  "executionTimeMs" : 0.0,
+  "methodName" : "",
+  "clientIp" : "",
+  "userAgent" : "",
+  "timestamp" : "2026-04-22T08:46:43.579"
+}

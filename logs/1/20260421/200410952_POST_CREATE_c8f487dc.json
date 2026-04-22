@@ -1,0 +1,17 @@
+{
+  "userId" : 1,
+  "username" : "admin123",
+  "operationType" : "POST_CREATE",
+  "operationModule" : "POST",
+  "operationDesc" : "发布帖子: 11111111111111111111111",
+  "requestMethod" : "POST",
+  "requestUrl" : "/api/v1/posts",
+  "requestParams" : "CreatePostDTO(categoryId=1, content=11111111111111111111111, image=)",
+  "requestStatus" : "SUCCESS",
+  "responseStatus" : 200,
+  "executionTimeMs" : 0.0,
+  "methodName" : "",
+  "clientIp" : "",
+  "userAgent" : "",
+  "timestamp" : "2026-04-21T20:04:10.952"
+}

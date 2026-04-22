@@ -1,0 +1,17 @@
+{
+  "userId" : 4,
+  "username" : "ltl",
+  "operationType" : "UPDATE",
+  "operationModule" : "USER",
+  "operationDesc" : "修改个人信息",
+  "requestMethod" : "PUT",
+  "requestUrl" : "/api/v1/users/profile",
+  "requestParams" : "{username=ltl, email=ltl@me.com, bio=null, avatar=null}",
+  "requestStatus" : "SUCCESS",
+  "responseStatus" : 200,
+  "executionTimeMs" : 0.0,
+  "methodName" : "",
+  "clientIp" : "",
+  "userAgent" : "",
+  "timestamp" : "2026-04-22T08:47:41.539"
+}

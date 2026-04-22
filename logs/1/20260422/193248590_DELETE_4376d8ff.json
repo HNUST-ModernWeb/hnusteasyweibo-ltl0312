@@ -1,0 +1,17 @@
+{
+  "userId" : 1,
+  "username" : "admin123",
+  "operationType" : "DELETE",
+  "operationModule" : "LIKE",
+  "operationDesc" : "取消点赞成功，帖子ID: 34",
+  "requestMethod" : "POST",
+  "requestUrl" : "/api/v1/posts/34/unlike",
+  "requestParams" : "postId=34, userId=1",
+  "requestStatus" : "SUCCESS",
+  "responseStatus" : 200,
+  "executionTimeMs" : 0.0,
+  "methodName" : "",
+  "clientIp" : "",
+  "userAgent" : "",
+  "timestamp" : "2026-04-22T19:32:48.590"
+}

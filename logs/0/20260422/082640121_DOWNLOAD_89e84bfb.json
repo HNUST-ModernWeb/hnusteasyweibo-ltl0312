@@ -1,0 +1,17 @@
+{
+  "userId" : 0,
+  "username" : "anonymous",
+  "operationType" : "DOWNLOAD",
+  "operationModule" : "FILE",
+  "operationDesc" : "下载文件失败：文件不存在",
+  "requestMethod" : "GET",
+  "requestUrl" : "/api/v1/files/download/9d2cf292-dcb5-4d62-96d1-a271c19f22f4",
+  "requestParams" : "filename=9d2cf292-dcb5-4d62-96d1-a271c19f22f4",
+  "requestStatus" : "FAILED",
+  "responseStatus" : 404,
+  "executionTimeMs" : 0.0,
+  "methodName" : "",
+  "clientIp" : "175.2.201.158",
+  "userAgent" : "Mozilla/5.0 (Linux; Android 16; V2403A) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.6778.200 Mobile Safari/537.36 VivoBrowser/28.3.4.0",
+  "timestamp" : "2026-04-22T08:26:40.121"
+}

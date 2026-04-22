@@ -1,0 +1,32 @@
+#数据库连接信息
+
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/hnusteasyweibo
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: root
+    password: a82711045
+  servlet:
+    multipart:
+      max-file-size: 50MB
+      max-request-size: 50MB
+
+server:
+  port: 8080
+
+file:
+  upload-dir: ./uploads
+  avatar-dir: ./uploads/avatars
+
+mybatis:
+  configuration:
+    map-underscore-to-camel-case: true
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+  mapper-locations: classpath:mapper/*.xml
+
+jwt:
+  secret: mySecretKeyForHnustEasyWeiboApp1234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890
+  expiration: 604800000
+
+log:
+  base-dir: ./logs

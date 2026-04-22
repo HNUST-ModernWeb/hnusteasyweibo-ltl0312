@@ -1,0 +1,17 @@
+{
+  "userId" : 4,
+  "username" : "ltl",
+  "operationType" : "POST_UPDATE",
+  "operationModule" : "POST",
+  "operationDesc" : "编辑帖子 ID: 33",
+  "requestMethod" : "PUT",
+  "requestUrl" : "/api/v1/posts/33",
+  "requestParams" : "UpdatePostDTO(categoryId=1, content=hello world, image=)",
+  "requestStatus" : "SUCCESS",
+  "responseStatus" : 200,
+  "executionTimeMs" : 0.0,
+  "methodName" : "",
+  "clientIp" : "",
+  "userAgent" : "",
+  "timestamp" : "2026-04-22T08:37:28.774"
+}

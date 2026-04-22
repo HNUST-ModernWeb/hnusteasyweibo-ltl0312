@@ -1,0 +1,17 @@
+{
+  "userId" : 4,
+  "username" : "ltl",
+  "operationType" : "LOGIN",
+  "operationModule" : "USER",
+  "operationDesc" : "用户登录",
+  "requestMethod" : "POST",
+  "requestUrl" : "/api/v1/users/login",
+  "requestParams" : "username=ltl",
+  "requestStatus" : "SUCCESS",
+  "responseStatus" : 200,
+  "executionTimeMs" : 0.0,
+  "methodName" : "",
+  "clientIp" : "113.245.73.152",
+  "userAgent" : "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36 Edg/146.0.3856.97",
+  "timestamp" : "2026-04-22T09:13:39.826"
+}

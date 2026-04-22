@@ -1,0 +1,17 @@
+{
+  "userId" : 1,
+  "username" : "admin123",
+  "operationType" : "POST_DELETE",
+  "operationModule" : "POST",
+  "operationDesc" : "删除帖子 ID: 32",
+  "requestMethod" : "DELETE",
+  "requestUrl" : "/api/v1/posts/32",
+  "requestParams" : "{}",
+  "requestStatus" : "SUCCESS",
+  "responseStatus" : 200,
+  "executionTimeMs" : 0.0,
+  "methodName" : "",
+  "clientIp" : "",
+  "userAgent" : "",
+  "timestamp" : "2026-04-21T20:04:16.611"
+}

@@ -1,0 +1,17 @@
+{
+  "userId" : 4,
+  "username" : "ltl",
+  "operationType" : "POST_CREATE",
+  "operationModule" : "POST",
+  "operationDesc" : "发布帖子: hello world",
+  "requestMethod" : "POST",
+  "requestUrl" : "/api/v1/posts",
+  "requestParams" : "CreatePostDTO(categoryId=1, content=hello world, image=)",
+  "requestStatus" : "SUCCESS",
+  "responseStatus" : 200,
+  "executionTimeMs" : 0.0,
+  "methodName" : "",
+  "clientIp" : "",
+  "userAgent" : "",
+  "timestamp" : "2026-04-22T08:34:11.215"
+}
