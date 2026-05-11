@@ -3,23 +3,8 @@ package cn.edu.hnust.hnusteasyweibo.dto;
 import lombok.Data;
 
 /**
- * 注册请求DTO（Data Transfer Object）
+ * 注册请求DTO
  * 用于接收用户注册请求的参数
- *
- * <p>请求示例：
- * <pre>
- * {
- *     "username": "user123",
- *     "password": "password123",
- *     "email": "user@example.com"
- * }
- * </pre>
- * </p>
- *
- * <p>使用场景：用户注册接口 /api/v1/users/register</p>
- *
- * @author hnust-easyweibo
- * @version 1.0
  */
 @Data
 public class RegisterDTO {

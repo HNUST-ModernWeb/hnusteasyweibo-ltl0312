@@ -38,7 +38,7 @@
             <template v-for="(file, index) in parseFiles(post.image)" :key="index">
               <div v-if="isImageFile(file)" class="media-image-wrapper">
                 <img :src="resolveUrl(file)" alt="分享图片" class="post-image" loading="lazy" />
-                <a :href="getDownloadUrl(file)" target="_blank" class="file-download image-download" download @click.stop>下载图片</a>
+                <a href="javascript:void(0)" class="file-download image-download" @click.stop="handleDownload(file)">下载图片</a>
               </div>
               <div v-else-if="isVideoFile(file)" class="media-video-wrapper">
                 <video :src="resolveUrl(file)" controls class="post-video" preload="metadata" playsinline />
@@ -49,7 +49,7 @@
                   <div class="file-details">
                     <span class="file-name">{{ getFileName(file) }}</span>
                   </div>
-                  <a :href="getDownloadUrl(file)" target="_blank" class="file-download">
+                  <a href="javascript:void(0)" class="file-download" @click.stop="handleDownload(file)">
                     <el-icon><Download /></el-icon> 下载
                   </a>
                 </div>
@@ -116,7 +116,7 @@ import { ref, onMounted, computed } from 'vue'
 import { useRouter, useRoute } from 'vue-router'
 import { ElMessage, ElMessageBox } from 'element-plus'
 import { Loading, View, ChatDotRound, Edit, Delete, Document, Download } from '@element-plus/icons-vue'
-import { getPost, likePost, unlikePost, isLiked, createComment, getComments, deleteComment, deletePost as deletePostApi } from '../api/post'
+import { getPost, likePost, unlikePost, isLiked, createComment, getComments, deleteComment, deletePost as deletePostApi, downloadFile } from '../api/post'
 
 const DEFAULT_AVATAR = 'https://cube.elemecdn.com/3/7c/3ea6beec64369c2642b92c6726f1epng.png'
 
@@ -260,6 +260,15 @@ export default {
     const getFileName = (url) => { try { return decodeURIComponent(url.split('/').pop()) } catch { return url } }
     const getDownloadUrl = (file) => `/api/files/download/${encodeURIComponent(file.split('/').pop())}`
 
+    const handleDownload = async (file) => {
+      const filename = file.split('/').pop()
+      try {
+        await downloadFile(filename)
+      } catch (err) {
+        ElMessage.error(err.message || '下载失败')
+      }
+    }
+
     const formatTime = (time) => {
       if (!time) return ''
       const date = new Date(time)
@@ -282,7 +291,7 @@ export default {
       isSubmittingComment, isLoggedIn, isCurrentUser, isEditable,
       toggleLike, submitComment, handleDeleteComment, isCommentOwner,
       editPost, handleDeletePost, goToUserProfile, resolveUrl, parseFiles,
-      isImageFile, isVideoFile, getFileName, getDownloadUrl, formatTime
+      isImageFile, isVideoFile, getFileName, getDownloadUrl, handleDownload, formatTime
     }
   }
 }

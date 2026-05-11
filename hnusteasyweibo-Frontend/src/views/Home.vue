@@ -73,7 +73,7 @@
                     <div class="file-info">
                       <el-icon :size="24"><Document /></el-icon>
                       <span class="file-name">{{ getFileName(file) }}</span>
-                      <a :href="getDownloadUrl(file)" target="_blank" class="file-download" @click.stop>
+                      <a href="javascript:void(0)" class="file-download" @click.stop="handleDownload(file)">
                         <el-icon><Download /></el-icon> 下载
                       </a>
                     </div>
@@ -114,7 +114,7 @@
 </template>
 
 <script>
-import { getPostList, getPostListByCategory, getCategories, deletePost as deletePostApi, searchPosts, likePost, unlikePost, isLiked } from '@/api/post'
+import { getPostList, getPostListByCategory, getCategories, deletePost as deletePostApi, searchPosts, likePost, unlikePost, isLiked, downloadFile } from '@/api/post'
 import { Loading, MoreFilled, View, ChatDotRound, Document, Download } from '@element-plus/icons-vue'
 
 const DEFAULT_AVATAR = 'https://cube.elemecdn.com/3/7c/3ea6beec64369c2642b92c6726f1epng.png'
@@ -299,6 +299,14 @@ export default {
       const filename = file.split('/').pop()
       return `/api/files/download/${encodeURIComponent(filename)}`
     },
+    async handleDownload(file) {
+      const filename = file.split('/').pop()
+      try {
+        await downloadFile(filename)
+      } catch (err) {
+        this.$message.error(err.message || '下载失败')
+      }
+    },
     formatTime(timeString) {
       if (!timeString) return ''
       const date = new Date(timeString)
@@ -331,68 +339,13 @@ export default {
   z-index: 100;
 }
 
-body.dark-mode-app .category-nav {
-  background-color: #161b22 !important;
-  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.3) !important;
-}
+
 
 .category-nav :deep(.el-tabs__header) { margin-bottom: 0; }
 .category-nav :deep(.el-tabs__item) { font-size: 14px; }
 .category-nav :deep(.el-tabs--border-card) { border: none; box-shadow: none; }
 
-body.dark-mode-app .category-nav :deep(.el-tabs--border-card) {
-  background-color: #161b22 !important;
-}
 
-body.dark-mode-app .category-nav :deep(.el-tabs__header) {
-  background-color: #161b22 !important;
-}
-
-body.dark-mode-app .category-nav :deep(.el-tabs__nav) {
-  background-color: #161b22 !important;
-}
-
-body.dark-mode-app .category-nav :deep(.el-tabs__item) {
-  color: #e5e7eb !important;
-  background-color: #161b22 !important;
-}
-
-body.dark-mode-app .category-nav :deep(.el-tabs__item:hover) {
-  color: #8ea2ff !important;
-  background: rgba(142, 162, 255, 0.1) !important;
-}
-
-body.dark-mode-app .category-nav :deep(.el-tabs__item.is-active) {
-  color: #8ea2ff !important;
-  background: rgba(142, 162, 255, 0.1) !important;
-}
-
-body.dark-mode-app .category-nav :deep(.el-tabs__active-bar) {
-  background-color: #8ea2ff !important;
-}
-
-body.dark-mode-app .category-nav :deep(.el-tabs--border-card) {
-  border: none !important;
-  box-shadow: none !important;
-}
-
-body.dark-mode-app .category-nav :deep(.el-tabs__header) {
-  border: none !important;
-}
-
-body.dark-mode-app .category-nav :deep(.el-tabs__nav) {
-  border: none !important;
-}
-
-body.dark-mode-app .category-nav :deep(.el-tabs__item) {
-  border: none !important;
-  box-shadow: none !important;
-}
-
-body.dark-mode-app .category-nav :deep(.el-tabs__content) {
-  border: none !important;
-  background-color: #161b22 !important;
-}
 
 .search-info {
   display: flex;
@@ -407,15 +360,7 @@ body.dark-mode-app .category-nav :deep(.el-tabs__content) {
   color: #606266;
 }
 
-body.dark-mode-app .search-info {
-  background: #161b22 !important;
-  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.3) !important;
-  color: #e5e7eb !important;
-}
 
-body.dark-mode-app .search-info .el-button {
-  color: #8ea2ff !important;
-}
 
 .posts-container { display: flex; flex-direction: column; gap: 12px; }
 
@@ -514,12 +459,7 @@ body.dark-mode-app .search-info .el-button {
   padding: 40px 20px; text-align: center;
 }
 
-body.dark-mode-app .loading, body.dark-mode-app .error, body.dark-mode-app .empty {
-  background-color: #161b22 !important;
-  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.3) !important;
-  color: #9ca3af !important;
-  border-color: #2b3240 !important;
-}
+
 
 .loading { display: flex; align-items: center; justify-content: center; gap: 10px; color: #909399; }
 
@@ -528,190 +468,13 @@ body.dark-mode-app .loading, body.dark-mode-app .error, body.dark-mode-app .empt
   border-radius: 12px; box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06); padding: 16px;
 }
 
-body.dark-mode-app .pagination {
-  background-color: #161b22 !important;
-  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.3) !important;
-}
 
-body.dark-mode-app .pagination :deep(.el-pagination__item) {
-  background: #1f2937 !important;
-  border-color: #374151 !important;
-  color: #e5e7eb !important;
-}
-
-body.dark-mode-app .pagination :deep(.el-pagination__item:hover) {
-  color: #8ea2ff !important;
-  border-color: #8ea2ff !important;
-}
-
-body.dark-mode-app .pagination :deep(.el-pagination__item.is-current) {
-  background: #8ea2ff !important;
-  border-color: #8ea2ff !important;
-  color: #fff !important;
-}
-
-body.dark-mode-app .pagination :deep(.el-pagination__button) {
-  background: #1f2937 !important;
-  border-color: #374151 !important;
-  color: #e5e7eb !important;
-}
-
-body.dark-mode-app .pagination :deep(.el-pagination__button:hover) {
-  color: #8ea2ff !important;
-  border-color: #8ea2ff !important;
-}
-
-body.dark-mode-app .pagination :deep(.el-pagination__sizes .el-select .el-input__wrapper) {
-  background: #1f2937 !important;
-  border-color: #374151 !important;
-}
-
-body.dark-mode-app .pagination :deep(.el-pagination__sizes .el-select .el-input__inner) {
-  color: #e5e7eb !important;
-}
-
-body.dark-mode-app .pagination :deep(.el-pagination__jump .el-input__wrapper) {
-  background: #1f2937 !important;
-  border-color: #374151 !important;
-}
-
-body.dark-mode-app .pagination :deep(.el-pagination__jump .el-input__inner) {
-  color: #e5e7eb !important;
-}
-
-body.dark-mode-app .pagination :deep(.el-pagination__total) {
-  color: #e5e7eb !important;
-}
-
-body.dark-mode-app .pagination :deep(.el-select .el-input__wrapper) {
-  background: #1f2937 !important;
-  border-color: #374151 !important;
-}
-
-body.dark-mode-app .pagination :deep(.el-select .el-input__inner) {
-  color: #e5e7eb !important;
-}
-
-body.dark-mode-app .pagination :deep(.el-input__wrapper) {
-  background: #1f2937 !important;
-  border-color: #374151 !important;
-}
-
-body.dark-mode-app .pagination :deep(.el-input__inner) {
-  color: #e5e7eb !important;
-}
-
-body.dark-mode-app .pagination :deep(.el-select-dropdown) {
-  background: #1f2937 !important;
-  border-color: #374151 !important;
-}
-
-body.dark-mode-app .pagination :deep(.el-select-dropdown__item) {
-  color: #e5e7eb !important;
-}
-
-body.dark-mode-app .pagination :deep(.el-select-dropdown__item:hover) {
-  background: rgba(142, 162, 255, 0.1) !important;
-  color: #8ea2ff !important;
-}
-
-body.dark-mode-app .pagination :deep(.el-pagination__jump) {
-  color: #e5e7eb !important;
-}
-
-body.dark-mode-app .pagination :deep(.el-pagination__jump input) {
-  background: #1f2937 !important;
-  border-color: #374151 !important;
-  color: #e5e7eb !important;
-}
-
-body.dark-mode-app .pagination :deep(.el-pagination__sizes) {
-  color: #e5e7eb !important;
-}
-
-body.dark-mode-app .pagination :deep(.el-pagination__sizes .el-select) {
-  color: #e5e7eb !important;
-}
-
-body.dark-mode-app .pagination :deep(.el-pagination__sizes .el-select .el-input__inner) {
-  color: #e5e7eb !important;
-}
-
-body.dark-mode-app .pagination :deep(.el-pagination__sizes .el-select .el-input__wrapper) {
-  background: #1f2937 !important;
-  border-color: #374151 !important;
-}
-
-body.dark-mode-app .pagination :deep(.el-pagination__button) {
-  background: #1f2937 !important;
-  border-color: #374151 !important;
-  color: #e5e7eb !important;
-}
-
-body.dark-mode-app .pagination :deep(.el-pagination__button:hover) {
-  background: rgba(142, 162, 255, 0.1) !important;
-  border-color: #8ea2ff !important;
-  color: #8ea2ff !important;
-}
-
-body.dark-mode-app .pagination :deep(.el-pagination__item) {
-  background: #1f2937 !important;
-  border-color: #374151 !important;
-  color: #e5e7eb !important;
-}
-
-body.dark-mode-app .pagination :deep(.el-pagination__item:hover) {
-  background: rgba(142, 162, 255, 0.1) !important;
-  border-color: #8ea2ff !important;
-  color: #8ea2ff !important;
-}
-
-body.dark-mode-app .pagination :deep(.el-pagination__item.is-current) {
-  background: #8ea2ff !important;
-  border-color: #8ea2ff !important;
-  color: #fff !important;
-}
 
 :deep(.el-pagination) {
   background: transparent;
 }
 
-:deep(.dark .el-pagination) {
-  --el-pagination-bg-color: #1e1e1e;
-  --el-pagination-button-bg-color: #2a2a2a;
-  --el-pagination-hover-color: #409eff;
-  color: #ddd;
-}
 
-:deep(.dark .el-pager li) {
-  background-color: #2a2a2a;
-  color: #ccc;
-}
-
-:deep(.dark .el-pager li.is-active) {
-  background-color: #409eff;
-  color: #fff;
-}
-
-:deep(.dark .btn-prev),
-:deep(.dark .btn-next) {
-  background-color: #2a2a2a;
-  color: #ccc;
-}
-
-:deep(.dark .el-select__wrapper) {
-  background-color: #2a2a2a;
-  border: 1px solid #444;
-  color: #ddd;
-}
-
-:deep(.dark .el-select__placeholder) {
-  color: #ccc;
-}
-
-:deep(.dark .el-select__suffix) {
-  color: #ccc;
-}
 
 .post-list-enter-active { transition: all 0.4s ease; }
 .post-list-enter-from { opacity: 0; transform: translateY(20px); }

@@ -1,0 +1,17 @@
+{
+  "userId" : 1,
+  "username" : "admin123",
+  "operationType" : "DOWNLOAD",
+  "operationModule" : "FILE",
+  "operationDesc" : "下载文件失败：文件不存在",
+  "requestMethod" : "GET",
+  "requestUrl" : "/api/v1/files/download/2b5bc863-01c3-40bd-b92b-a53c5a6fb6ba.pdf",
+  "requestParams" : "filename=2b5bc863-01c3-40bd-b92b-a53c5a6fb6ba.pdf",
+  "requestStatus" : "FAILED",
+  "responseStatus" : 404,
+  "executionTimeMs" : 0.0,
+  "methodName" : "",
+  "clientIp" : "0:0:0:0:0:0:0:1",
+  "userAgent" : "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) TraeCN/1.107.1 Chrome/142.0.7444.235 Electron/39.2.7 Safari/537.36",
+  "timestamp" : "2026-04-25T18:20:25.921"
+}

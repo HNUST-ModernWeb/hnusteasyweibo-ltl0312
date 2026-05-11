@@ -287,35 +287,7 @@ export default {
 
 .empty-container { padding: 40px 0; }
 
-:deep(.dark .el-pagination) {
-  --el-pagination-bg-color: #1e1e1e;
-  --el-pagination-button-bg-color: #2a2a2a;
-  color: #ddd;
-}
 
-:deep(.dark .el-pager li) {
-  background-color: #2a2a2a;
-  color: #ccc;
-}
-
-:deep(.dark .el-pager li.is-active) {
-  background-color: #409eff;
-  color: #fff;
-}
-
-:deep(.dark .el-select__wrapper) {
-  background-color: #2a2a2a;
-  border: 1px solid #444;
-  color: #ddd;
-}
-
-:deep(.dark .el-select__placeholder) {
-  color: #ccc;
-}
-
-:deep(.dark .el-select__suffix) {
-  color: #ccc;
-}
 
 @media (max-width: 768px) {
   .profile-header { flex-direction: column; align-items: center; text-align: center; padding: 20px; }

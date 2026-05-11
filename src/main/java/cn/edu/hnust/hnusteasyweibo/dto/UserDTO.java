@@ -3,15 +3,8 @@ package cn.edu.hnust.hnusteasyweibo.dto;
 import lombok.Data;
 
 /**
- * 用户DTO（Data Transfer Object）
- * 用于在前后端交互中传输用户信息，不包含敏感数据如密码
- *
- * <p>与User实体的区别：UserDTO用于API响应，不包含password等敏感字段</p>
- *
- * <p>使用场景：用户信息更新接口、个人信息展示等</p>
- *
- * @author hnust-easyweibo
- * @version 1.0
+ * 用户DTO
+ * 用于前后端交互中传输用户信息，不包含敏感数据
  */
 @Data
 public class UserDTO {

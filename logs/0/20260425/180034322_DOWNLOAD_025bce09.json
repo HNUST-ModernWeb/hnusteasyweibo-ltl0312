@@ -1,0 +1,17 @@
+{
+  "userId" : 0,
+  "username" : "anonymous",
+  "operationType" : "DOWNLOAD",
+  "operationModule" : "FILE",
+  "operationDesc" : "下载文件失败：文件不存在",
+  "requestMethod" : "GET",
+  "requestUrl" : "/api/v1/files/download/notexist.jpg",
+  "requestParams" : "filename=notexist.jpg",
+  "requestStatus" : "FAILED",
+  "responseStatus" : 404,
+  "executionTimeMs" : 0.0,
+  "methodName" : "",
+  "clientIp" : "0:0:0:0:0:0:0:1",
+  "userAgent" : "Mozilla/5.0 (Windows NT; Windows NT 10.0; zh-CN) WindowsPowerShell/5.1.26100.7019",
+  "timestamp" : "2026-04-25T18:00:34.322"
+}

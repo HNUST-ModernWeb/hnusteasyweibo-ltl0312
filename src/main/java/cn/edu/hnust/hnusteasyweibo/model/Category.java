@@ -6,12 +6,7 @@ import lombok.NoArgsConstructor;
 
 /**
  * 分类/板块实体类
- * 用于表示帖子的分类板块
- *
- * <p>使用场景：帖子分类浏览、板块导航等业务场景</p>
- *
- * @author hnust-easyweibo
- * @version 1.0
+ * 表示帖子的分类板块
  */
 @Data
 @AllArgsConstructor

@@ -1,0 +1,17 @@
+{
+  "userId" : 1,
+  "username" : "admin123",
+  "operationType" : "CREATE",
+  "operationModule" : "FOLLOW",
+  "operationDesc" : "关注成功，目标用户ID: 4",
+  "requestMethod" : "POST",
+  "requestUrl" : "/api/v1/follows/4",
+  "requestParams" : "followerId=1, followingId=4",
+  "requestStatus" : "SUCCESS",
+  "responseStatus" : 200,
+  "executionTimeMs" : 0.0,
+  "methodName" : "",
+  "clientIp" : "",
+  "userAgent" : "",
+  "timestamp" : "2026-04-23T17:38:46.368"
+}

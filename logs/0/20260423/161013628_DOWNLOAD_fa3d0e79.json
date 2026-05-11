@@ -1,0 +1,17 @@
+{
+  "userId" : 0,
+  "username" : "anonymous",
+  "operationType" : "DOWNLOAD",
+  "operationModule" : "FILE",
+  "operationDesc" : "下载文件成功：31ebb635-506b-4c46-b8b5-e5b56a88a194.html",
+  "requestMethod" : "GET",
+  "requestUrl" : "/api/v1/files/download/31ebb635-506b-4c46-b8b5-e5b56a88a194.html",
+  "requestParams" : "filename=31ebb635-506b-4c46-b8b5-e5b56a88a194.html",
+  "requestStatus" : "SUCCESS",
+  "responseStatus" : 200,
+  "executionTimeMs" : 0.0,
+  "methodName" : "",
+  "clientIp" : "0:0:0:0:0:0:0:1",
+  "userAgent" : "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36 Edg/147.0.0.0",
+  "timestamp" : "2026-04-23T16:10:13.628"
+}

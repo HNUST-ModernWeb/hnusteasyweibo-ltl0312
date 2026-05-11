@@ -1,0 +1,17 @@
+{
+  "userId" : 0,
+  "username" : "anonymous",
+  "operationType" : "DOWNLOAD",
+  "operationModule" : "FILE",
+  "operationDesc" : "下载文件成功：f2339bd4-54e8-45df-8ccd-a7923afa7adf.mp4",
+  "requestMethod" : "GET",
+  "requestUrl" : "/api/v1/files/download/f2339bd4-54e8-45df-8ccd-a7923afa7adf.mp4",
+  "requestParams" : "filename=f2339bd4-54e8-45df-8ccd-a7923afa7adf.mp4",
+  "requestStatus" : "SUCCESS",
+  "responseStatus" : 200,
+  "executionTimeMs" : 0.0,
+  "methodName" : "",
+  "clientIp" : "0:0:0:0:0:0:0:1",
+  "userAgent" : "Mozilla/5.0 (Windows NT; Windows NT 10.0; zh-CN) WindowsPowerShell/5.1.26100.7019",
+  "timestamp" : "2026-04-25T17:59:54.884"
+}

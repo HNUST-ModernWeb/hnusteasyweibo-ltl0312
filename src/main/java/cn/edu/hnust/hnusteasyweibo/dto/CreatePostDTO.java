@@ -7,9 +7,6 @@ import lombok.NoArgsConstructor;
 /**
  * 创建帖子请求DTO
  * 用于接收用户创建帖子的请求数据
- *
- * @author hnust-easyweibo
- * @version 1.0
  */
 @Data
 @AllArgsConstructor

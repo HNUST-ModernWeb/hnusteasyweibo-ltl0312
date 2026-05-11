@@ -8,12 +8,7 @@ import java.util.Date;
 
 /**
  * 点赞实体类
- * 用于表示用户对帖子的点赞关系
- *
- * <p>使用场景：点赞、取消点赞、获取用户点赞列表等业务场景</p>
- *
- * @author hnust-easyweibo
- * @version 1.0
+ * 映射数据库中likes表，表示用户对帖子的点赞记录
  */
 @Data
 @AllArgsConstructor

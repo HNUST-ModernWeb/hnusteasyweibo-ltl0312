@@ -346,3 +346,56 @@ export const checkPostEditable = async (postId) => {
     throw { message: '检查编辑权限失败' }
   }
 }
+
+export const downloadFile = async (filename) => {
+  try {
+    const token = getToken()
+    const response = await axios.get(`${API_BASE_URL}/files/download/${encodeURIComponent(filename)}`, {
+      responseType: 'blob',
+      headers: { 'Authorization': token ? `Bearer ${token}` : '' }
+    })
+
+    if (response.data.type && response.data.type.includes('application/json')) {
+      const text = await response.data.text()
+      try {
+        const errorData = JSON.parse(text)
+        throw { message: errorData.message || '下载失败' }
+      } catch (e) {
+        if (e.message) throw e
+        throw { message: '下载失败' }
+      }
+    }
+
+    const contentDisposition = response.headers['content-disposition']
+    let downloadName = filename
+    if (contentDisposition) {
+      const utf8Match = contentDisposition.match(/filename\*=UTF-8''(.+)/)
+      if (utf8Match) {
+        downloadName = decodeURIComponent(utf8Match[1])
+      } else {
+        const match = contentDisposition.match(/filename="?(.+?)"?$/)
+        if (match) downloadName = match[1]
+      }
+    }
+
+    const blob = new Blob([response.data])
+    const url = window.URL.createObjectURL(blob)
+    const link = document.createElement('a')
+    link.href = url
+    link.download = downloadName
+    document.body.appendChild(link)
+    link.click()
+    document.body.removeChild(link)
+    window.URL.revokeObjectURL(url)
+
+    return { success: true }
+  } catch (error) {
+    if (error.response && error.response.status === 404) {
+      throw { message: '文件不存在或已被删除' }
+    }
+    if (error.message && !error.message.includes('Request failed')) {
+      throw error
+    }
+    throw { message: '下载失败，请稍后重试' }
+  }
+}

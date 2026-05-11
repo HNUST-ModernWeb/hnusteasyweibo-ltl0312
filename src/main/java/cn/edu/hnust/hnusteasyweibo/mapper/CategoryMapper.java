@@ -8,16 +8,6 @@ import java.util.List;
 /**
  * 分类Mapper接口
  * 提供分类数据的数据库操作方法
- *
- * <p>主要功能：
- * <ul>
- *   <li>分类的增删改查操作</li>
- *   <li>支持按排序序号查询</li>
- * </ul>
- * </p>
- *
- * @author hnust-easyweibo
- * @version 1.0
  */
 @Mapper
 public interface CategoryMapper {

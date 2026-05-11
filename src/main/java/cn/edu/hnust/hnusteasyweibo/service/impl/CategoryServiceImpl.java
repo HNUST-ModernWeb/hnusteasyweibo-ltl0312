@@ -14,10 +14,6 @@ import java.util.List;
 /**
  * 分类服务实现类
  * 实现CategoryService接口中定义的分类相关业务逻辑
- *
- * @author hnust-easyweibo
- * @version 1.0
- * @see CategoryService
  */
 @Service
 @Slf4j

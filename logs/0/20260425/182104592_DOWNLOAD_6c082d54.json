@@ -1,0 +1,17 @@
+{
+  "userId" : 0,
+  "username" : "anonymous",
+  "operationType" : "DOWNLOAD",
+  "operationModule" : "FILE",
+  "operationDesc" : "下载文件成功：fbab80d6-4672-443a-841a-a740614d131d.jpg",
+  "requestMethod" : "GET",
+  "requestUrl" : "/api/v1/files/download/fbab80d6-4672-443a-841a-a740614d131d.jpg",
+  "requestParams" : "filename=fbab80d6-4672-443a-841a-a740614d131d.jpg",
+  "requestStatus" : "SUCCESS",
+  "responseStatus" : 200,
+  "executionTimeMs" : 0.0,
+  "methodName" : "",
+  "clientIp" : "0:0:0:0:0:0:0:1",
+  "userAgent" : "Mozilla/5.0 (Windows NT; Windows NT 10.0; zh-CN) WindowsPowerShell/5.1.26100.7019",
+  "timestamp" : "2026-04-25T18:21:04.592"
+}

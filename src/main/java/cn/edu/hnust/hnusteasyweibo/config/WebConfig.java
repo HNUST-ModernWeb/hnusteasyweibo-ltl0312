@@ -27,9 +27,7 @@ public class WebConfig implements WebMvcConfigurer {
 
     @Override
     public void addResourceHandlers(ResourceHandlerRegistry registry) {
-        // 获取项目根目录的绝对路径
         String projectRoot = System.getProperty("user.dir");
-        // 构建绝对路径
         java.nio.file.Path absoluteUploadDir = java.nio.file.Paths.get(projectRoot, uploadDir.replace("./", ""));
         
         registry.addResourceHandler("/uploads/**")

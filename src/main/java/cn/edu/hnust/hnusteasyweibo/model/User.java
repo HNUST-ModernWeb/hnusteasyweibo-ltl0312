@@ -9,12 +9,7 @@ import java.time.LocalDateTime;
 
 /**
  * 用户实体类
- * 用于表示系统中的用户信息，包含用户的基本属性和状态
- *
- * <p>使用场景：用户注册、登录、个人信息展示、权限管理等业务场景</p>
- *
- * @author hnust-easyweibo
- * @version 1.0
+ * 表示系统中的用户信息，包含用户的基本属性和状态
  */
 @Data
 @AllArgsConstructor

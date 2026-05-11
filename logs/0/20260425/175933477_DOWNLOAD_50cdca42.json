@@ -1,0 +1,17 @@
+{
+  "userId" : 0,
+  "username" : "anonymous",
+  "operationType" : "DOWNLOAD",
+  "operationModule" : "FILE",
+  "operationDesc" : "下载文件成功：164acc9d-6131-4eed-83e0-4a24da9cf8aa.jpg",
+  "requestMethod" : "GET",
+  "requestUrl" : "/api/v1/files/download/164acc9d-6131-4eed-83e0-4a24da9cf8aa.jpg",
+  "requestParams" : "filename=164acc9d-6131-4eed-83e0-4a24da9cf8aa.jpg",
+  "requestStatus" : "SUCCESS",
+  "responseStatus" : 200,
+  "executionTimeMs" : 0.0,
+  "methodName" : "",
+  "clientIp" : "0:0:0:0:0:0:0:1",
+  "userAgent" : "Mozilla/5.0 (Windows NT; Windows NT 10.0; zh-CN) WindowsPowerShell/5.1.26100.7019",
+  "timestamp" : "2026-04-25T17:59:33.477"
+}
